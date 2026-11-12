@@ -1,0 +1,16 @@
+[project]
+name = "aikit"
+version = "0.1.0"
+description = "Tiny teaching toolkit for the Applied AI Masterclass"
+requires-python = ">=3.10"
+dependencies = ["anthropic>=1.0", "pydantic>=2.6", "numpy>=1.26", "python-dotenv>=1.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["aikit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,14 @@
+# Core (everything in the course runs with just these)
+anthropic>=1.0
+pydantic>=2.6
+numpy>=1.26
+python-dotenv>=1.0
+pytest>=8.0
+
+# Used from Module 8 / the capstone (API server)
+fastapi>=0.110
+uvicorn>=0.29
+
+# Optional: real semantic embeddings + cross-encoder re-ranking (Module 4).
+# ~1-2 GB download. The course works without it via a built-in fallback.
+# sentence-transformers>=3.0
