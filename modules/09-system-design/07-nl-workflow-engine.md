@@ -60,7 +60,7 @@ EXECUTION (many times)
 ```json
 {"trigger": {"type": "form.submitted", "form": "lead"},
  "steps": [
-   {"id": "enrich",  "use": "clearbit.lookup", "in": {"domain": "{{trigger.email_domain}}"}},
+   {"id": "enrich",  "use": "company.lookup", "in": {"domain": "{{trigger.email_domain}}"}},
    {"id": "score",   "use": "llm.classify",    "in": {"text": "{{enrich.summary}}"},
                      "out_schema": {"score": "int[0,100]", "reason": "string"}},
    {"id": "crm",     "use": "crm.create_lead", "in": {"email": "{{trigger.email}}", "score": "{{score.score}}"}},
