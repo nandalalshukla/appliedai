@@ -5,7 +5,7 @@
 You will not memorize definitions here. Every idea is introduced with a problem, built from scratch in a few dozen lines of Python, broken on purpose so you see the failure, and then used in a real project.
 
 ```
-16 weeks  ·  11 modules  ·  40+ runnable labs  ·  6 guided projects  ·  8 system designs
+16 weeks  ·  11 modules  ·  40+ runnable labs  ·  6 guided projects  ·  7 system designs
 ```
 
 ## Who this is for
@@ -24,7 +24,7 @@ You will not memorize definitions here. Every idea is introduced with a problem,
 | Design memory and multi-agent systems | A research team of agents with long-term memory |
 | Measure quality with evals instead of vibes | An eval harness that gates changes in CI |
 | Run AI in production: caching, cost, observability, safety | A deployed, streamed, traced, budgeted capstone service |
-| Reason about AI system design in interviews | Eight worked designs, from "RAG over 10M docs" to a workflow engine |
+| Reason about AI system design in interviews | Seven worked designs, from "RAG over 10M docs" to a workflow engine |
 
 ## How the course is organized
 
@@ -39,14 +39,14 @@ You will not memorize definitions here. Every idea is introduced with a problem,
 | 6 | [Memory and multi-agent systems](modules/06-memory-multi-agent/README.md) | 10-11 | A memory store, an orchestrator with specialists |
 | 7 | [Evaluation and safety](modules/07-evals-safety/README.md) | 12-13 | An eval harness, an LLM judge, a red-team suite |
 | 8 | [Production](modules/08-production/README.md) | 14 | Caching, tracing, cost control, a streaming API |
-| 9 | [AI system design](modules/09-system-design/README.md) | 15 | Eight design documents |
+| 9 | [AI system design](modules/09-system-design/README.md) | 15 | Seven design documents |
 | 10 | [Career: portfolio, interviews, job search](modules/10-career/README.md) | 16 | A portfolio and an interview plan |
 
 Projects live in [`projects/`](projects/README.md). The full week-by-week plan is in [`SYLLABUS.md`](SYLLABUS.md), and hand-picked external material for every module is in [`RESOURCES.md`](RESOURCES.md).
 
 ### Coverage of Arpit Bhayani's Applied AI syllabus
 
-Every topic in [Arpit Bhayani's Applied AI masterclass](https://arpitbhayani.me/applied-ai/) is covered, including all eight of his system-design problems. [`SYLLABUS.md`](SYLLABUS.md#mapping-to-arpit-bhayanis-applied-ai-syllabus) has a line-by-line map from each of his topics to the lesson here that teaches it. This course adds the fundamentals before that syllabus (Modules 0-1) and the career material after it (Module 10), so a beginner can start from nothing.
+Every topic in [Arpit Bhayani's Applied AI masterclass](https://arpitbhayani.me/applied-ai/) is covered, including all seven of his system-design problems. [`SYLLABUS.md`](SYLLABUS.md#mapping-to-arpit-bhayanis-applied-ai-syllabus) has a line-by-line map from each of his topics to the lesson here that teaches it. This course adds the fundamentals before that syllabus (Modules 0-1) and the career material after it (Module 10), so a beginner can start from nothing.
 
 This is an independent course. It follows the topic list he publishes; it does not contain his lectures, slides, or code.
 

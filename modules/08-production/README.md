@@ -2,7 +2,7 @@
 
 **Week 14.** A system that works on your laptop has passed the easy test. Production means thousands of users, real money, strict latency, partial outages, and nobody watching. This module covers what changes, and the gotchas that experienced teams learned the expensive way.
 
-Labs: [`labs/`](labs/) · Toolkit: [`aikit/trace.py`](../../aikit/trace.py) · Design problem: [Natural-language workflow engine](../09-system-design/08-nl-workflow-engine.md) · Project unlocked: [P6 Capstone](../../projects/06-capstone/README.md)
+Labs: [`labs/`](labs/) · Toolkit: [`aikit/trace.py`](../../aikit/trace.py) · Design problem: [Natural-language workflow engine](../09-system-design/07-nl-workflow-engine.md) · Project unlocked: [P6 Capstone](../../projects/06-capstone/README.md)
 
 ---
 
