@@ -34,7 +34,7 @@ that help answer the question; leave out the rest. Reply with the JSON list only
 def llm_rerank(client, query: str, candidates: list[Chunk], keep: int = 3) -> list[Chunk]:
     listing = "\n".join(f"[{i}] {c.text}" for i, c in enumerate(candidates))
     response = client.messages.create(
-        model=MODEL, max_tokens=2000, system=RERANK_SYSTEM,
+        model=MODEL, max_tokens=4000, system=RERANK_SYSTEM,
         messages=[{"role": "user", "content": f"Question: {query}\n\nDocuments:\n{listing}"}],
     )
     try:

@@ -226,7 +226,7 @@ def ask(body: AskRequest, account: dict = Depends(authenticate)):
                 yield sse("status", {"message": "Understanding the question"})
                 with tracer.span("rewrite") as s:
                     convo = "\n".join(history[-6:]) or "(none)"
-                    r = client.messages.create(model=MODEL, max_tokens=1000, system=REWRITE_SYSTEM,
+                    r = client.messages.create(model=MODEL, max_tokens=4000, system=REWRITE_SYSTEM,
                                                messages=[{"role": "user", "content": f"Conversation:\n{convo}\n\nLatest: {question}"}])
                     tracer.record_usage(s, r, MODEL)
                     cost += usage_cost(r.usage)
@@ -246,7 +246,7 @@ def ask(body: AskRequest, account: dict = Depends(authenticate)):
                 with tracer.span("generate") as s:
                     prompt = f"{format_context(sources)}\n\nQuestion: {question}"
                     parts = []
-                    with client.messages.stream(model=MODEL, max_tokens=2000, system=SYSTEM,
+                    with client.messages.stream(model=MODEL, max_tokens=4000, system=SYSTEM,
                                                 messages=[{"role": "user", "content": prompt}]) as live:
                         for piece in live.text_stream:
                             parts.append(piece)

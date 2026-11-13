@@ -19,7 +19,7 @@ first_token_at = None
 
 with client.messages.stream(
     model=MODEL,
-    max_tokens=2000,
+    max_tokens=4000,
     messages=[{"role": "user", "content": "In one sentence, why do chat apps stream?"}],
 ) as stream:
     for piece in stream.text_stream:

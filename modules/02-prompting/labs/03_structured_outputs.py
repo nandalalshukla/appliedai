@@ -45,7 +45,7 @@ client = get_client(
 # model's output to it, and validates the result into a Ticket instance.
 response = client.messages.parse(
     model=MODEL,
-    max_tokens=2000,
+    max_tokens=4000,
     system=SYSTEM,
     messages=[{"role": "user", "content": f"<message>{MESSAGE}</message>"}],
     output_format=Ticket,

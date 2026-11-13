@@ -15,7 +15,7 @@ meter = CostMeter()
 def ask(history: list[dict], user_text: str) -> str:
     history.append({"role": "user", "content": user_text})
     response = client.messages.create(
-        model=MODEL, max_tokens=2000, system="Be brief.", messages=history
+        model=MODEL, max_tokens=4000, system="Be brief.", messages=history
     )
     meter.add(response)
     reply = text_of(response)

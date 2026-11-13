@@ -97,7 +97,7 @@ def llm_judge(client, criterion: str, name: str = "judge", model: str = MODEL) -
                   f"<reference>\n{case.expected}\n</reference>\n\n<criterion>\n{criterion}\n</criterion>")
         try:
             raw = text_of(client.messages.create(
-                model=model, max_tokens=2000, system=JUDGE_SYSTEM,
+                model=model, max_tokens=4000, system=JUDGE_SYSTEM,
                 messages=[{"role": "user", "content": prompt}]))
             data = json.loads(raw)
             return Score(name, data["verdict"] == "pass", data.get("reasoning", ""))

@@ -97,7 +97,7 @@ class Team:
         prompt = (f"<question>{question}</question>\n<draft>{draft}</draft>\n"
                   f"<evidence>{json.dumps(self.evidence)}</evidence>")
         r = self.critic_client.messages.create(
-            model=MODEL, max_tokens=2000, system=system, messages=[{"role": "user", "content": prompt}])
+            model=MODEL, max_tokens=4000, system=system, messages=[{"role": "user", "content": prompt}])
         self.meter.add(r)
         try:
             return json.loads(text_of(r))

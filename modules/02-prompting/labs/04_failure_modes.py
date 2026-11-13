@@ -55,7 +55,7 @@ client = get_client(script=script)
 
 def run(system: str, user: str) -> str:
     r = client.messages.create(
-        model=MODEL, max_tokens=2000, system=system, messages=[{"role": "user", "content": user}]
+        model=MODEL, max_tokens=4000, system=system, messages=[{"role": "user", "content": user}]
     )
     return text_of(r)
 

@@ -77,7 +77,7 @@ def assistant(user_text: str, guarded: bool) -> str:
         user_text, blocked = input_guard(user_text)
         if blocked:
             return "Sorry, I can't process that message."
-    reply = text_of(client.messages.create(model=MODEL, max_tokens=2000, system=SYSTEM,
+    reply = text_of(client.messages.create(model=MODEL, max_tokens=4000, system=SYSTEM,
                                            messages=[{"role": "user", "content": f"<customer>{user_text}</customer>"}]))
     return output_guard(reply) if guarded else reply
 

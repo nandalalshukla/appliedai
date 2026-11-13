@@ -90,7 +90,7 @@ response = client.messages.create(
 print(text_of(response))
 ```
 
-The call (`client.messages.create(...)`) and the response shape are identical in both modes. Read [`aikit/llm.py`](../../aikit/llm.py) once; it is under 200 lines and you will write something like it at every job.
+The call (`client.messages.create(...)`) and the response shape are identical in both modes. Read [`aikit/llm.py`](../../aikit/llm.py) once; it is about 220 lines and you will write something like it at every job.
 
 ## Troubleshooting
 

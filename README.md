@@ -5,7 +5,7 @@
 You will not memorize definitions here. Every idea is introduced with a problem, built from scratch in a few dozen lines of Python, broken on purpose so you see the failure, and then used in a real project.
 
 ```
-16 weeks  ·  11 modules  ·  40+ runnable labs  ·  6 guided projects  ·  7 system designs
+16 weeks  ·  11 modules  ·  37 runnable labs  ·  6 guided projects  ·  7 system designs
 ```
 
 ## Who this is for
@@ -86,10 +86,13 @@ Plan for 8-10 hours a week. If you have less time, keep the order and stretch th
 ## Repository layout
 
 ```
-aikit/       shared toolkit: client factory, mock client, cost meter, embedder
+aikit/       shared toolkit you read and extend: client + mock client, tools, agent loop,
+             retrieval, memory, evals, tracing (about 1,200 lines in total)
 modules/     lessons and labs, in order
 projects/    six guided projects with reference solutions
-tests/       tests for the toolkit, labs and solutions (run: pytest)
+data/        sample corpus and labelled cases used by labs and projects
+tests/       tests for the toolkit, every lab and every solution (run: pytest)
+.github/     CI workflow: tests and the eval gate on every push
 ```
 
 ## When you get stuck

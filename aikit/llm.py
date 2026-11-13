@@ -118,7 +118,8 @@ class FakeClient:
         self.messages = self  # so client.messages.create(...) works
 
     def create(self, **kwargs) -> SimpleNamespace:
-        self.calls.append(kwargs)
+        # Snapshot the message list: the caller keeps appending to the same list afterwards.
+        self.calls.append({**kwargs, "messages": list(kwargs.get("messages", []))})
         if self._responder is not None:
             out = self._responder(kwargs)
         elif self._script:

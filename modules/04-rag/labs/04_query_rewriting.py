@@ -37,7 +37,7 @@ Rules:
 def rewrite(client, history: list[str], message: str) -> list[str]:
     convo = "\n".join(history) or "(no earlier messages)"
     response = client.messages.create(
-        model=MODEL, max_tokens=2000, system=REWRITE_SYSTEM,
+        model=MODEL, max_tokens=4000, system=REWRITE_SYSTEM,
         messages=[{"role": "user", "content": f"<conversation>\n{convo}\n</conversation>\n\nLatest message: {message}"}],
     )
     try:

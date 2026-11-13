@@ -44,7 +44,7 @@ def make_router(version: str):
     client = get_client(responder=responder)
 
     def route(message: str) -> str:
-        r = client.messages.create(model=MODEL, max_tokens=2000, system=PROMPTS[version],
+        r = client.messages.create(model=MODEL, max_tokens=4000, system=PROMPTS[version],
                                    messages=[{"role": "user", "content": f"<message>{message}</message>"}])
         answer = text_of(r).strip().lower()
         return answer if answer in QUEUES else "other"

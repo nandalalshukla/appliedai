@@ -109,7 +109,7 @@ And the response:
 
 ### Thinking and effort
 
-Modern models can reason privately before answering ("extended thinking"). On current Claude models this is on by default and adapts to the task; you steer how hard the model works with an *effort* setting (`low` to `max`). More effort means better answers on hard problems, with more tokens and time. For simple, high-volume tasks, use low effort or a small model. You will measure this trade-off in Module 8 rather than guess.
+Modern models can reason privately before answering ("extended thinking"). On current Claude models this is on by default and adapts to the task; you steer how hard the model works with an *effort* setting (`low` to `max`). More effort means better answers on hard problems, with more tokens and time. For simple, high-volume tasks, use low effort or a small model. Thinking tokens count toward `max_tokens` and are billed as output, so leave headroom: a cap that is too tight can be used up before the visible answer starts. You will measure this trade-off in Module 8 rather than guess.
 
 ### Statelessness, in code
 

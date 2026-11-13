@@ -28,7 +28,7 @@ def answer(client, question: str, k: int = 3) -> str:
     print("retrieved:", [c.id for c in hits])
     prompt = f"{format_context(hits)}\n\nQuestion: {question}"  # documents first, question last
     response = client.messages.create(
-        model=MODEL, max_tokens=2000, system=SYSTEM, messages=[{"role": "user", "content": prompt}]
+        model=MODEL, max_tokens=4000, system=SYSTEM, messages=[{"role": "user", "content": prompt}]
     )
     return text_of(response)
 

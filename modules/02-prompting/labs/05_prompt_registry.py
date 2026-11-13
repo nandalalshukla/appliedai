@@ -71,7 +71,7 @@ def run_prompt(client, name: str, **variables) -> str:
     prompt = REGISTRY[(name, ACTIVE[name])]
     started = time.time()
     response = client.messages.create(
-        model=MODEL, max_tokens=2000, system=prompt.system,
+        model=MODEL, max_tokens=4000, system=prompt.system,
         messages=[{"role": "user", "content": prompt.render(**variables)}],
     )
     output = text_of(response)

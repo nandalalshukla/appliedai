@@ -52,7 +52,7 @@ client = get_client(
 messages = [{"role": "user", "content": "Where is my order A-4471?"}]
 
 # --- Step 2: the model asks for a tool ---------------------------------------
-response = client.messages.create(model=MODEL, max_tokens=2000, tools=TOOLS, messages=messages)
+response = client.messages.create(model=MODEL, max_tokens=4000, tools=TOOLS, messages=messages)
 print("stop_reason:", response.stop_reason)  # "tool_use"
 
 call = next(b for b in response.content if b.type == "tool_use")
@@ -74,7 +74,7 @@ messages.append(
 )
 
 # --- Step 5: the model answers ------------------------------------------------
-final = client.messages.create(model=MODEL, max_tokens=2000, tools=TOOLS, messages=messages)
+final = client.messages.create(model=MODEL, max_tokens=4000, tools=TOOLS, messages=messages)
 print("\nfinal answer:", text_of(final))
 
 # Try it:

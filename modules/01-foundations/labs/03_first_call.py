@@ -9,7 +9,7 @@ client = get_client(script=["A token is a chunk of text, often part of a word, t
 
 response = client.messages.create(
     model=MODEL,
-    max_tokens=1000,  # hard cap on the length of the reply
+    max_tokens=4000,  # hard cap on the length of the reply
     system="You are a patient tutor. Answer in one sentence.",  # standing instructions
     messages=[{"role": "user", "content": "What is a token?"}],  # the conversation so far
 )

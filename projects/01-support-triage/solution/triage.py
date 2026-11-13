@@ -70,7 +70,7 @@ def triage(client, message: str, meter: CostMeter | None = None, max_attempts: i
                       summary="Empty message", needs_human=False)
     messages = [{"role": "user", "content": f"<message>\n{message}\n</message>"}]
     for _ in range(max_attempts):
-        response = client.messages.parse(model=MODEL, max_tokens=2000, system=SYSTEM,
+        response = client.messages.parse(model=MODEL, max_tokens=4000, system=SYSTEM,
                                          messages=messages, output_format=Ticket)
         if meter:
             meter.add(response)

@@ -124,7 +124,7 @@ class MemoryStore:
         related = self.recall(exchange, k=5, touch=False)  # show the model what we already know
         known = "\n".join(f"[{m.id}] {m.text}" for m in related) or "(none)"
         response = client.messages.create(
-            model=model, max_tokens=2000, system=EXTRACT_SYSTEM,
+            model=model, max_tokens=4000, system=EXTRACT_SYSTEM,
             messages=[{"role": "user", "content":
                        f"<existing_memories>\n{known}\n</existing_memories>\n\n<exchange>\n{exchange}\n</exchange>"}],
         )

@@ -74,7 +74,7 @@ reflector = get_client(script=[BAD_LESSON, GOOD_LESSON, LOGIN_LESSON])
 def reflect(failures) -> str:
     listing = "\n".join(f"- message: {r.input!r} | routed to: {r.output} | correct: "
                         f"{next(c.expected for c in CASES if c.id == r.case_id)}" for r in failures)
-    r = reflector.messages.create(model=MODEL, max_tokens=1000, system=REFLECT_SYSTEM,
+    r = reflector.messages.create(model=MODEL, max_tokens=4000, system=REFLECT_SYSTEM,
                                   messages=[{"role": "user", "content": f"Failed cases:\n{listing}"}])
     return text_of(r).strip()
 

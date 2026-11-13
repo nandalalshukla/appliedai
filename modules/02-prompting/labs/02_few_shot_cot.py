@@ -55,7 +55,7 @@ client = get_client(
 message = "The refund page shows a blank error screen every time."
 response = client.messages.create(
     model=MODEL,
-    max_tokens=2000,
+    max_tokens=4000,
     system=build_system(),
     messages=[{"role": "user", "content": f"<message>{message}</message>"}],
 )

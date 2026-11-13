@@ -37,10 +37,10 @@ client = get_client(
 )
 
 vague = client.messages.create(
-    model=MODEL, max_tokens=2000, messages=[{"role": "user", "content": VAGUE}]
+    model=MODEL, max_tokens=4000, messages=[{"role": "user", "content": VAGUE}]
 )
 good = client.messages.create(
-    model=MODEL, max_tokens=2000, system=SYSTEM, messages=[{"role": "user", "content": USER}]
+    model=MODEL, max_tokens=4000, system=SYSTEM, messages=[{"role": "user", "content": USER}]
 )
 
 print("VAGUE PROMPT ->", text_of(vague))

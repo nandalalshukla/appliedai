@@ -52,7 +52,7 @@ def fast_decide(message: str) -> Decision:
 
 def llm_decide(client, message: str) -> Decision:
     r = client.messages.create(
-        model=MODEL, max_tokens=2000,
+        model=MODEL, max_tokens=4000,
         system="Route the message to one queue: billing, bug, account, other. "
                "Route by root problem. Reply with the queue name only.",
         messages=[{"role": "user", "content": f"<message>{message}</message>"}],

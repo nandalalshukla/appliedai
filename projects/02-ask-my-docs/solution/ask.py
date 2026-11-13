@@ -53,7 +53,7 @@ class DocsAssistant:
         self.meter = CostMeter()
 
     def _call(self, system: str, user: str) -> str:
-        r = self.client.messages.create(model=MODEL, max_tokens=2000, system=system,
+        r = self.client.messages.create(model=MODEL, max_tokens=4000, system=system,
                                         messages=[{"role": "user", "content": user}])
         self.meter.add(r)
         return text_of(r)

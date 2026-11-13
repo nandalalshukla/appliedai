@@ -53,7 +53,7 @@ context = store.as_context(question, k=2)
 print(context)
 
 response = client.messages.create(
-    model=MODEL, max_tokens=2000,
+    model=MODEL, max_tokens=4000,
     system="You are a helpful assistant. Use the memories about the user when they are relevant.",
     messages=[{"role": "user", "content": f"{context}\n\n{question}"}],
 )

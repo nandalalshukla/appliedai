@@ -66,7 +66,7 @@ def run(label: str, system_factory) -> CostMeter:
     print(f"\n{label}")
     for q in QUESTIONS:
         response = client.messages.create(
-            model=MODEL, max_tokens=2000, system=system_factory(),
+            model=MODEL, max_tokens=4000, system=system_factory(),
             messages=[{"role": "user", "content": q}],  # the part that varies goes LAST
         )
         meter.add(response)

@@ -25,7 +25,7 @@ def answer(question: str, tracer: Tracer) -> str:
     with tracer.span("handle_request", user="u_42", prompt_version="rag-v3") as root:
 
         with tracer.span("rewrite_query") as s:
-            r = client.messages.create(model=MODEL, max_tokens=1000,
+            r = client.messages.create(model=MODEL, max_tokens=4000,
                                        system="Rewrite as a search query. Return JSON.",
                                        messages=[{"role": "user", "content": question}])
             tracer.record_usage(s, r, MODEL)
@@ -36,7 +36,7 @@ def answer(question: str, tracer: Tracer) -> str:
             s.set(chunks=[c.id for c in hits])  # log WHAT was retrieved, not just how many
 
         with tracer.span("generate") as s:
-            r = client.messages.create(model=MODEL, max_tokens=2000,
+            r = client.messages.create(model=MODEL, max_tokens=4000,
                                        system="Answer from the documents and cite them.",
                                        messages=[{"role": "user", "content": f"{format_context(hits)}\n\n{question}"}])
             tracer.record_usage(s, r, MODEL)
