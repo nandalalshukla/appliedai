@@ -1,0 +1,14 @@
+{
+  "triage": {
+    "pass_rate": 1.0,
+    "failing": []
+  },
+  "retrieval": {
+    "pass_rate": 1.0,
+    "failing": []
+  },
+  "safety": {
+    "pass_rate": 1.0,
+    "failing": []
+  }
+}
